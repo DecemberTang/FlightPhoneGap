@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    --><!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="app/css/test.css" />
+    <link rel="stylesheet" type="text/css" href="app/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/css/jquery.mobile-1.4.5.min.css">
+    <title>Online Store</title>
+</head>
+<body>
+<div data-role="page" id="mainpage">
+    <div data-role="header" class="header">
+        <div class="dropdown classify">
+            <button type="button" class="btn dropdown-toggle ui-btn ui-shadow ui-corner-all" id="dropdownMenu1" data-toggle="dropdown">
+                &#9776;
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="">Women</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">Men</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">
+                        New Arrival
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">Sale</a>
+                </li>
+            </ul>
+        </div>
+        <p class="store">Store</p>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div>
+            <form class="search" method="post" action="">
+                <div class="ui-field-contain">
+                    <input type="search" name="search" id="search" placeholder="输入搜索商品">
+                </div>
+                <button class="go">Go</button>
+            </form>
+        </div>
+        <div class="blank"></div>
+        <p class="title">商品推荐</p>
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="app/img/r1.png" alt="First slide">
+                </div>
+                <div class="item">
+                    <img src="app/img/r2.png" alt="Second slide">
+                </div>
+                <div class="item">
+                    <img src="app/img/r3.png" alt="Third slide">
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#myCarousel"
+               data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#myCarousel"
+               data-slide="next">&rsaquo;</a>
+        </div>
+        <div class="womenDiv">
+            <img src="app/img/tu1.png">
+            <p class="women">T-Shirt & Dress<br>For Women</p>
+        </div>
+        <div>
+            <img src="app/img/men.png">
+            <p class="men">T-Shirt & Pants<br>For Men</p>
+        </div>
+        <p class="new">NEW ARRIVAL</p>
+        <div class="new-arrival">
+            <a>
+                <img src="app/img/new1.png">
+                <p>Skirt<br>&#65509;340</p>
+            </a>
+            <a>
+                <img src="app/img/new2.png">
+                <p>T-Shirt<br>&#65509;260</p>
+            </a>
+            <a>
+                <img src="app/img/new3.png">
+                <p>Dress<br>&#65509;410</p>
+            </a>
+        </div>
+        <p class="sale">Sale Now 30% OFF</p>
+        <div class="sale-products">
+            <a><img src="app/img/sale1.png"></a>
+            <a class="last"><img src="app/img/sale3.png"></a>
+        </div>
+    </div>
+    <!--<div data-role="footer">
+        <footer>
+            <div id="home"><img src="app/img/car.png"></div>
+            <div id="car"><img src="app/img/home.png"></div>
+            <div id="me"><a href="login.html"><img src="app/img/people.png"></a></div>
+        </footer>
+    </div>-->
+    <div data-role="footer" class="footer1">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-icon="shop"></a></li>
+                <li><a href="#" data-icon="home"></a></li>
+                <li><a href="#" data-icon="user"></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/es5-shim/es5-sham.js"></script>
+    <![endif]-->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/requirejs/require.js" data-main="main.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="app/js/bootstrap.min.js"></script>
+    <script src="app/js/jquery.mobile-1.4.5.min.js"></script>
+    <!--<script type="text/javascript" src="app/js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>-->
+
+</body>
+
+</html>

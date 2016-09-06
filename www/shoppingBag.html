@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="app/css/test.css"/>
+    <link rel="stylesheet" href="app/css/jquery.mobile-1.4.5.min.css">
+</head>
+<body>
+<div data-role="page" id="shoppingBagpage">
+    <div data-role="header" class="header">
+        <a href="index.html" class="back ui-btn ui-btn-inline ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow"></a>
+        <p class="store">购物车</p>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <p class="content">我的购物车&nbsp;<span id="shoppingNum">0</span></p>
+        <div class="line1"></div>
+        <br>
+        <ul>
+            <li class="products">
+                <img class="small-image" src="app/img/sale3.png">
+                <div>
+                    <p>连衣裙</p>
+                    <p>价格<span>&#65509;220</span></p>
+                    <p>尺码：<span>S</span></p>
+                </div>
+            </li>
+            <li class="products">
+                <img class="small-image" src="app/img/sale3.png">
+                <div>
+                    <p>连衣裙</p>
+                    <p>价格<span>&#65509;220</span></p>
+                    <p>尺码：<span>S</span></p>
+                </div>
+            </li>
+        </ul>
+        <br>
+        <div class="line1"></div>
+        <br>
+        <p>总价：&#65509;440</p>
+        <button class="checkoutButton">结算</button>
+    </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="app/js/jquery.mobile-1.4.5.min.js"></script>
+</body>
+</html>

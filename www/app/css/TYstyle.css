@@ -1,0 +1,160 @@
+*{
+    margin:0;
+    padding:0;
+}
+header{
+    background-color: #434343;
+    height: 66px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+header p{
+    color: #ffffff;
+    font-size: 30px;
+    width: 150px;
+    position: relative;
+    top: 20%;
+    left: 290px;
+}
+
+#searchBar{
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%,-50%); */
+    margin: -10px 0 0 -120px;
+}
+.search{
+    border: 0px;
+    padding-left: 3px;
+    width: 100%;
+    height: 20px;
+    font-family: arial;
+    color: #636365;
+    font-size: 8pt;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+.classify{
+    width: 6%;
+    height: 60%;
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+    color: #FFFFFF;
+    font-size: 200%;
+    text-align: center;
+}
+.blank{
+    height: 66px;
+}
+.title{
+    background-color: #feffdb;
+    color: #000000;
+    height: 70px;
+    font-size: 30px;
+    /* display: flex; */
+    text-align: center;
+    padding: 15px;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.womenDiv{
+    padding: 20px 0 0 0;
+}
+img{
+    width: 100%;
+}
+.women{
+    background-color: #ffcdd4;
+    color: #000000;
+    height: 150px;
+    font-size: 35px;
+    text-align: center;
+    /* display: flex; */
+    padding: 25px;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.women p, .men p{
+    display: block;
+
+}
+.men{
+    background-color: #C3FFF0;
+    color: #000000;
+    height: 150px;
+    font-size: 35px;
+    text-align: center;
+    /* display: flex; */
+    padding: 25px;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.new-arrival{
+    background-color: #ffffff;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
+.new{
+    display: block;
+    position: relative;
+    top: 6%;
+    color: #000000;
+    font-size: 35px;
+    padding: 25px;
+    text-align: center;
+}
+.new-arrival a, .sale-products a{
+    display: block;
+    padding: 0 30px 30px 30px;
+}
+.new-arrival a p{
+    background-color: rgba(182, 238, 187, 0.34);
+    border: 2px solid #FFFFFF;
+    color: #000000;
+    font-size: 20px;
+    padding: 25px;
+    text-align: center;
+}
+.sale{
+    background-color: #000000;
+    position: relative;
+    top: 6%;
+    color: #FFFFFF;
+    font-size: 30px;
+    padding: 25px;
+    text-align: center;
+}
+.sale-products{
+    background-color: #000000;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
+footer{
+    background-color: #FFFFFF;
+    height: 66px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+}
+footer div{
+    background-color: transparent;
+    width: 33%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+footer div img{
+    width: 60%;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="app/css/test.css"/>
+    <link rel="stylesheet" href="app/css/jquery.mobile-1.4.5.min.css">
+
+</head>
+<body>
+<div data-role="page" id="loginpage">
+    <div data-role="header" class="header">
+        <a href="index.html" class="back ui-btn ui-btn-inline ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow"></a>
+        <p class="store">登录</p>
+    </div>
+    <div data-role="main" class="ui-content">
+        <p class="account">已有账户：</p>
+        <form method="post" action="">
+            <div class="ui-field-contain">
+                <label for="username">用户名：</label>
+                <input type="text" name="username" id="username">
+                <label for="password">密码:</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <button  class="loginButton" type="submit">登 录</button>
+        </form>
+        <button id="loginButton">登 录</button>
+        <br><br>
+        <p class="account">新用户请注册：</p>
+        <br>
+        <a class="register" href="register.html"><button class="registerButton">注册账号</button></a>
+    </div>
+</div>
+<script defer="defer" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script defer="defer" src="app/js/jquery.mobile-1.4.5.min.js"></script>
+
+<!--[if lt IE 9]>
+<script defer="defer" src="bower_components/es5-shim/es5-shim.js"></script>
+<script defer="defer" src="bower_components/es5-shim/es5-sham.js"></script>
+<![endif]-->
+<script defer="defer" src="bower_components/jquery/dist/jquery.js"></script>
+<script defer="defer" src="bower_components/requirejs/require.js" data-main="main.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+CACHE MANIFEST
+#2016-06-22:v0
+
+CACHE:
+http://172.27.35.4/www2/app/configurationData.js
+
+NETWORK:
+*
+
+FALLBACK:
+*

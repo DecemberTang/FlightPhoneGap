@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="pragma" content="no-cache">
+    <!-- meta使用viewport以确保页面可自由缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title>商店</title>
+    <!-- 引入 jQuery Mobile 样式 -->
+    <link rel="stylesheet" type="text/css" href="app/css/test.css" />
+    <link rel="stylesheet" type="text/css" href="app/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/css/jquery.mobile-1.4.5.min.css">
+</head>
+<body>
+<!-- 主页 -->
+<div data-role="page" id="mainpage">
+    <div data-role="header" class="header ui-header-fixed">
+        <div class="dropdown classify">
+            <button type="button" class="btn dropdown-toggle ui-btn ui-shadow ui-corner-all" id="dropdownMenu1" data-toggle="dropdown">
+                &#9776;
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#womenPage">Women</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#menPage">Men</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#newArrivalpage">New Arrival</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#salepage">Sale</a>
+                </li>
+            </ul>
+        </div>
+        <p class="store">Store</p>
+    </div>
+    <div data-role="main" class="ui-content">
+
+        <div>
+            <div class="search">
+                <div class="ui-field-contain">
+                    <input type="search" name="search" id="search" placeholder="请输入要搜索的商品">
+                </div>
+                <!--<a href="#searchpage"><button id="goButton" class="go">Go</button></a>-->
+                <button id="goButton" class="go">Go</button>
+            </div>
+        </div>
+        <div class="blank"></div>
+        <!--<button id="refresh" onclick="window.location.reload()">refresh</button>-->
+        <p class="title">Welcome!</p>
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <a href="#womenPage"><img src="app/img/r1.png" alt="First slide"></a>
+                </div>
+                <div class="item">
+                    <a href="#womenPage"><img src="app/img/r2.png" alt="Second slide"></a>
+                </div>
+                <div class="item">
+                    <a href="#womenPage"><img src="app/img/r3.png" alt="Third slide"></a>
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#myCarousel"
+               data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#myCarousel"
+               data-slide="next">&rsaquo;</a>
+        </div>
+        <div class="womenDiv">
+            <a href="#womenPage">
+                <img src="app/img/tu1.png">
+                <p class="women">T-Shirt & Dress<br>For Women</p>
+            </a>
+        </div>
+        <div>
+            <a href="#menPage">
+                <img src="app/img/men.png">
+                <p class="men">T-Shirt & Pants<br>For Men</p>
+            </a>
+        </div>
+        <p class="new">NEW ARRIVAL</p>
+        <div class="new-arrival">
+            <a href="#productDetailspage">
+                <img src="app/img/new1.png" class="new1">
+                <p class="new1">Skirt<br>&#65509;340</p>
+            </a>
+            <a href="#productDetailspage">
+                <img src="app/img/new2.png" class="new2">
+                <p class="new2">T-Shirt<br>&#65509;260</p>
+            </a>
+            <a href="#productDetailspage">
+                <img src="app/img/new3.png" class="new3">
+                <p class="new3">Dress<br>&#65509;410</p>
+            </a>
+        </div>
+        <p class="sale">Sale Now 30% OFF</p>
+        <div class="sale-products">
+            <a href="#salepage"><img src="app/img/sale1.png"></a>
+            <a href="#salepage"><img src="app/img/sale3.png"></a>
+        </div>
+    </div>
+    <div data-role="footer" class="ui-footer-fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a id="bag" class="cart" href="#shoppingBagpage" data-icon="shop">购物车</a></li>
+                <li><a href="index.html" data-icon="home">主页</a></li>
+                <li><a class="user" data-icon="user">用户</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 购物车页 -->
+<div data-role="page" id="shoppingBagpage">
+    <div data-role="header" class="header">
+        <a onclick="history.back()" class="back ui-btn ui-btn-inline ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow"></a>
+        <p class="store">购物车</p>
+    </div>
+    <div data-role="main" class="ui-content">
+        <div class='addedProducts'></div>
+        <button class="checkoutButton">结算</button>
+    </div>
+</div>
+
+<!-- 登录页 -->
+<div data-role="page" id="loginPage">
+    <div data-role="header" class="header">
+        <a href="index.html" class="back ui-btn ui-btn-inline ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow"></a>
+        <p class="store">登录</p>
+    </div>
+    <div data-role="main" class="ui-content">
+        <p class="account">已有账户：</p>
+        <!--<form method="post" action="">-->
+            <div class="ui-field-contain">
+                <label for="username">用户名：</label>
+                <input type="text" name="username" id="username0">
+                <label for="password">密码:</label>
+                <input type="password" name="password" id="password0">
+            </div>
+            <button class="loginButton">登 录</button>
+        <!--</form>-->
+        <br><br>
+        <p class="account">新用户请注册：</p>
+        <br>
+        <a class="register" href="#registerPage"><button class="registerButton">注册账号</button></a>
+    </div>
+</div>
+
+<!-- 注册页 -->
+<div data-role="page" id="registerPage">
+    <div data-role="header" class="header">
+        <a href="#loginPage" class="back ui-btn ui-btn-inline ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow"></a>
+        <p class="store">注册</p>
+    </div>
+    <div data-role="main" class="ui-content">
+        <!--<form method="post" action="">-->
+            <div class="ui-field-contain">
+                <label for="username">请输入用户名:</label>
+                <input type="text" name="username" id="username">
+                <label for="password">请输入密码:</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <button id="register-btn" class="registerButton">注册</button>
+        <!--</form>-->
+    </div>
+</div>
+
+<!-- 男装页 -->
+<div data-role="page" id="menPage">
+    <div data-role="header" class="header ui-header-fixed">
+        <div class="dropdown classify">
+            <button type="button" class="btn dropdown-toggle ui-btn ui-shadow ui-corner-all" id="dropdownMenu2" data-toggle="dropdown">
+                &#9776;
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#womenPage">Women</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#menPage">Men</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#newArrivalpage">New Arrival</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#salepage">Sale</a>
+                </li>
+            </ul>
+        </div>
+        <p class="store">Store</p>
+    </div>
+    <div class="blank1"></div>
+    <p class="title1">MEN</p>
+    <div data-role="main" class="ui-content">
+        <ul>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/man1.jpg" class="man1">
+                    <p class="man1">Shirt<br>&#65509;260</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/man2.jpg" class="man2">
+                    <p class="man2">Coat<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/man3.jpg" class="man3">
+                    <p class="man3">Shirt<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/man4.jpg" class="man4">
+                    <p class="man4">Suit<br>&#65509;340</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div data-role="footer" class="ui-footer-fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a class="cart" href="#shoppingBagpage" data-icon="shop">购物袋</a></li>
+                <li><a href="index.html" data-icon="home">主页</a></li>
+                <li><a class="user" data-icon="user">用户</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 女装页 -->
+<div data-role="page" id="womenPage">
+    <div data-role="header" class="header ui-header-fixed">
+        <div class="dropdown classify">
+            <button type="button" class="btn dropdown-toggle ui-btn ui-shadow ui-corner-all" id="dropdownMenu" data-toggle="dropdown">
+                &#9776;
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#womenPage">Women</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#menPage">Men</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#newArrivalpage">New Arrival</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#salepage">Sale</a>
+                </li>
+            </ul>
+        </div>
+        <p class="store">Store</p>
+    </div>
+    <div class="blank1"></div>
+    <p class="title1">WOMEN</p>
+    <div data-role="main" class="ui-content">
+        <ul>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman1.jpg" id="woman1" class="woman1">
+                    <p>Skirt<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman2.jpg" class="woman2">
+                    <p class="woman2">Skirt<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman3.jpg" class="woman3">
+                    <p class="woman3">Shirt<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman4.jpg" class="woman4">
+                    <p class="woman4">Skirt<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman5.jpg" class="woman5">
+                    <p class="woman5">Skirt<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman6.jpg" class="woman6">
+                    <p class="woman6">Short Pants<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman7.jpg" class="woman7">
+                    <p class="woman7">Pants<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman8.jpg" class="woman8">
+                    <p class="woman8">Suit<br>&#65509;340</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div data-role="footer" class="ui-footer-fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a class="cart" href="#shoppingBagpage" data-icon="shop">购物袋</a></li>
+                <li><a href="index.html" data-icon="home">主页</a></li>
+                <li><a class="user" data-icon="user">用户</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 新品页 -->
+<div data-role="page" id="newArrivalpage">
+    <div data-role="header" class="header ui-header-fixed">
+        <div class="dropdown classify">
+            <button type="button" class="btn dropdown-toggle ui-btn ui-shadow ui-corner-all" id="dropdownMenu3" data-toggle="dropdown">
+                &#9776;
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#womenPage">Women</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#menPage">Men</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#newArrivalpage">New Arrival</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#salepage">Sale</a>
+                </li>
+            </ul>
+        </div>
+        <p class="store">Store</p>
+    </div>
+    <div class="blank1"></div>
+    <p class="title1">NEW ARRIVAL</p>
+    <div data-role="main" class="ui-content">
+        <ul>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/man4.jpg" class="newman1">
+                    <p class="newman1">Suit<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman5.jpg" class="newwoman2">
+                    <p class="newwoman2">Skirt<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/man3.jpg" class="newman3">
+                    <p class="newman3">Shirt<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman3.jpg" class="newwoman4">
+                    <p class="newwoman4">Shirt<br>&#65509;340</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div data-role="footer" class="ui-footer-fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a class="cart" href="#shoppingBagpage" data-icon="shop">购物袋</a></li>
+                <li><a href="index.html" data-icon="home">主页</a></li>
+                <li><a class="user" data-icon="user">用户</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 打折页 -->
+<div data-role="page" id="salepage">
+    <div data-role="header" class="header ui-header-fixed">
+        <div class="dropdown classify">
+            <button type="button" class="btn dropdown-toggle ui-btn ui-shadow ui-corner-all" id="dropdownMenu4" data-toggle="dropdown">
+                &#9776;
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#womenPage">Women</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#menPage">Men</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#newArrivalpage">New Arrival</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#salepage">Sale</a>
+                </li>
+            </ul>
+        </div>
+        <p class="store">Store</p>
+    </div>
+    <div class="blank1"></div>
+    <p class="title1">SALE</p>
+    <div data-role="main" class="ui-content">
+        <ul>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman1.jpg" class="salewoman1">
+                    <p class="salewoman1">Skirt<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman6.jpg" class="salewoman2">
+                    <p class="salewoman2">Short Pants<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman7.jpg" class="salewoman3">
+                    <p class="salewoman3">Pants<br>&#65509;340</p>
+                </a>
+            </li>
+            <li class="man-woman">
+                <a href="#productDetailspage">
+                    <img src="app/img/woman8.jpg" class="salewoman4">
+                    <p class="salewoman4">Pants<br>&#65509;340</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div data-role="footer" class="ui-footer-fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a class="cart" href="#shoppingBagpage" data-icon="shop">购物袋</a></li>
+                <li><a href="index.html" data-icon="home">主页</a></li>
+                <li><a class="user" data-icon="user">用户</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 商品细节页 -->
+<div data-role="page" id="productDetailspage">
+    <div data-role="header" class="header ui-header-fixed">
+        <div class="dropdown classify">
+            <button type="button" class="btn dropdown-toggle ui-btn ui-shadow ui-corner-all" id="dropdownMenu5" data-toggle="dropdown">
+                &#9776;
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu5">
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#womenPage">Women</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#menPage">Men</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#newArrivalpage">New Arrival</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#salepage">Sale</a>
+                </li>
+            </ul>
+        </div>
+        <p class="store">Store</p>
+    </div>
+    <div class="blank1"></div>
+    <p class="title1">商品细节</p>
+    <div  data-role="main" class="ui-content">
+        <div id="productDetails"></div>
+        <label class="product-description">尺码:</label>
+        <div>
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <select name="size" id="size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                </select>
+            </fieldset>
+        </div>
+        <input id="addToCart" class="checkoutButton" type="submit" data-inline="true" value="加入购物车">
+    </div>
+    <div class="blank1"></div>
+    <div data-role="footer" class="ui-footer-fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a class="cart" href="#shoppingBagpage" data-icon="shop">购物袋</a></li>
+                <li><a href="index.html" data-icon="home">主页</a></li>
+                <li><a class="user" data-icon="user">用户</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 用户登录页 -->
+<div data-role="page" id="userpage">
+    <div data-role="main" class="ui-content">
+        <div class="photo"></div>
+        <div id="usernameContainer">
+            <!--<div class="username">欢迎 用户名！</div>-->
+        </div>
+        <br>
+        <div class="line"></div>
+        <br>
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#">我的订单</a></li>
+        </ul>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-icon="heart">收藏</a></li>
+                <li><a href="index.html" data-icon="home">主页</a></li>
+                <li><a class="cart" href="#shoppingBagpage" data-icon="shop">购物袋</a></li>
+                <li><a onclick="history.back()" data-icon="back">返回</a></li>
+            </ul>
+        </div>
+        <br><br>
+        <a href="#loginPage"><button id="logout" class="logout">退出当前账户</button></a>
+    </div>
+</div>
+
+<!-- 搜索商品结果页 -->
+<div data-role="page" id="searchpage">
+    <div data-role="header" class="header">
+        <a onclick="history.back()" class="back ui-btn ui-btn-inline ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow"></a>
+        <p class="store">Search</p>
+    </div>
+    <div data-role="main" class="ui-content">
+        <div class="searchContainer">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script src="app/js/mobile-event-collection.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="app/js/bootstrap.min.js"></script>
+<script src="app/js/jquery.mobile-1.4.5.min.js"></script>
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/es5-shim/es5-sham.js"></script>
+<![endif]-->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/requirejs/require.js" data-main="main.js"></script>
+
+</body>
+</html>
