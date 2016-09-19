@@ -1,13 +1,6 @@
 'use strict';
 
-define(
-
-    [
-      'http://localhost/configurationData.js',
-      'app/configurationData'
-    ],
-
-    function(onlineConfigData, offlineConfigData) {
+define(function() {
         var config = {
             networkCheck: function(){
                 var networkState = navigator.connection.type;
@@ -25,17 +18,15 @@ define(
                 alert('Connection type: ' + states[networkState]);
                 alert('networkState: ' + networkState);
                 if(networkState == 'none' || networkState == 'unknown'){
-                  alert('offline status '+offlineConfigData.eventType[0]);
-                  return offlineConfigData;
+                    alert('offline status ');
+                    return false;
                 }
                 else{
-                  alert('online status '+onlineConfigData.eventType[0]);
-                  return onlineConfigData;
+                    alert('online status ');
+                    return true;
                 }
             }
         };
-
       return config;
-
     }
 );

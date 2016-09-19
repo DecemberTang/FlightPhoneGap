@@ -7,18 +7,29 @@
 define(
     function(){
         return {
-            eventType: ['clickButton'],
+            eventType: ['clickButton','openApp'],
 
             configurationDetails: [
                 {
-                    eventType: ['clickButton'],
+                    eventType: 'clickButton',
                     isCollection: true,
                     appId: '1',
                     appTitle: 'Store',
                     appVersionName: 'V2.0',
                     platform: 'iOS',
                     platformVersion: '4.0',
-                    autoSubmitEvents: false,
+                    autoSubmitEvents: true,
+                    eventStoreTime: 300000
+                },
+                {
+                    eventType: 'openApp',
+                    isCollection: true,
+                    appId: '1',
+                    appTitle: 'Store',
+                    appVersionName: 'V2.0',
+                    platform: 'iOS',
+                    platformVersion: '4.0',
+                    autoSubmitEvents: true,
                     eventStoreTime: 300000
                 }
             ]

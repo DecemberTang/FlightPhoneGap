@@ -2,10 +2,11 @@ define(
 
     [
         'flight/lib/component',
-        '../network_check'
+        'http://localhost/configurationData.js',
+        '../configurationData'
     ],
 
-    function (defineComponent,networkCheck){
+    function (defineComponent,online,offline){
         return defineComponent(login);
 
         function login(){
@@ -19,33 +20,24 @@ define(
                 console.log('localStorage: '+localStorage.length);
                 console.log(localStorage);
                 console.log(JSON.stringify(localStorage).length);
-                var option = networkCheck.networkCheck();
-                var options={
-                    appId: '1',
-                    appTitle: 'testApp',
-                    appVersionName: 'V2.0',
-                    platform: 'ios',
-                    platformVersion: '4.0',
-                    autoSubmitEvents: false,
-                    eventStoreTime: 300000
-                };
+                var option = offline.configurationDetails[1];
+                console.log(option);
                 count++;
-                //localStorage.clear();
                 var manager=new MECManager(option);
                 console.log("Analytics initialized");
-                manager.recordEvent('clickButton','button_ID='+'buttonID'+'&click_count='+count,
+                manager.collectEvent(option.eventType,'timestamp='+new Date().toISOString(),
                     'http://10.108.167.72:9763/endpoints/HttpReciever_20160511');
                 alert("success");
 
             };
-            this.dosomething=function(){
-                console.log("in login dosomething method");
+            this.clear = function(){
+                window.localStorage.clear();
             };
 
             this.after('initialize', function () {
 
                 this.on('click',this.loginMethod);
-                //this.on('click', this.dosomething);
+                //this.on('click', this.clear);
             });
 
         }

@@ -10,7 +10,8 @@ define(
         '../component/user',
         '../component/logout',
         '../component/shopping_cart',
-        '../component/post_event'
+        '../component/post_event',
+        '../component/load_page'
     ],
 
     function(
@@ -21,7 +22,8 @@ define(
         User,
         Logout,
         ShoppingCart,
-        PostEvent) {
+        PostEvent,
+        LoadPage) {
 
       function initialize() {
           Login.attachTo('.loginButton');
@@ -38,6 +40,7 @@ define(
               cartContainerSelector: '.addedProducts'
           });
           PostEvent.attachTo('.go');
+          LoadPage.attachTo(document);
       }
 
       return initialize;

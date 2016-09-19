@@ -48,7 +48,6 @@
         this.options.platformVersion = options.platformVersion || "V0.0";
         this.options.appId = options.appId || "default00";
         this.options.platform = options.platform || "default Platform: iOS";
-
     }
 
     /**
@@ -158,15 +157,15 @@
     };
 
     /**
-     * MECManager.recordEvent
+     * MECManager.collectEvent
      *
      */
-    MECManager.prototype.recordEvent=function(eventType,attributes,URL){
-        //console.log('[Function: MECManager.recordEvent]'+' eventType: '+eventType
+    MECManager.prototype.collectEvent=function(eventType,attributes,URL){
+        //console.log('[Function: MECManager.collectEvent]'+' eventType: '+eventType
         //            +' attributes '+JSON.stringify(attributes));
-        alert('[Function: MECManager.recordEvent]'+' eventType: '+eventType
+        alert('[Function: MECManager.collectEvent]'+' eventType: '+eventType
         +' '+attributes);
-        console.log('[Function: MECManager.recordEvent]'+' eventType: '+eventType
+        console.log('[Function: MECManager.collectEvent]'+' eventType: '+eventType
             +' '+attributes);
         var event=this.createEvent(eventType,attributes,URL);
         console.log("this.options.autoSubmitEvents: "+this.options.autoSubmitEvents);
