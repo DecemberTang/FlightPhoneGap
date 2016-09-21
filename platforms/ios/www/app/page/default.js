@@ -10,7 +10,7 @@ define(
         '../component/user',
         '../component/logout',
         '../component/shopping_cart',
-        '../component/post_event',
+        '../component/search',
         '../component/load_page'
     ],
 

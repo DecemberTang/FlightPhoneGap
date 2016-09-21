@@ -1,5 +1,6 @@
 /**
  * Created by tangyue on 16/6/26.
+ * 打开应用后收集openApp事件
  */
 'use strict';
 
@@ -9,7 +10,7 @@ define(
         'flight/lib/component',
         'http://localhost/configurationData.js',
         '../configurationData',
-        '../network_check',
+        '../network_check'
     ],
 
     function(defineComponent,online,offline,networkCheck) {
