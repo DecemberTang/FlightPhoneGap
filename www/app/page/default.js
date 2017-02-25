@@ -10,7 +10,7 @@ define(
         '../component/user',
         '../component/logout',
         '../component/shopping_cart',
-        '../component/search',
+        '../component/post_event',
         '../component/load_page'
     ],
 
@@ -40,7 +40,7 @@ define(
               cartContainerSelector: '.addedProducts'
           });
           PostEvent.attachTo('.go');
-          LoadPage.attachTo(document);
+          //LoadPage.attachTo(document);
       }
 
       return initialize;

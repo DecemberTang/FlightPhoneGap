@@ -18,8 +18,7 @@ define(
                     appVersionName: 'V2.0',
                     platform: 'iOS',
                     platformVersion: '4.0',
-                    autoSubmitEvents: true,
-                    eventStoreTime: 300000
+                    autoSubmitEvents: true
                 },
                 {
                     eventType: 'openApp',
@@ -29,8 +28,7 @@ define(
                     appVersionName: 'V2.0',
                     platform: 'iOS',
                     platformVersion: '4.0',
-                    autoSubmitEvents: true,
-                    eventStoreTime: 300000
+                    autoSubmitEvents: true
                 }
             ]
         };

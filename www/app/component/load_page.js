@@ -8,7 +8,7 @@ define(
 
     [
         'flight/lib/component',
-        'http://localhost/configurationData.js',
+        '../onlineConfig.js',
         '../configurationData',
         '../network_check'
     ],
@@ -24,20 +24,28 @@ define(
 
             this.loadPage=function(){
                 console.log('window.onload');
-                var networkFlag = networkCheck.networkCheck();
+                //var networkFlag = networkCheck.networkCheck();
                 var option;
-                if(networkFlag){
-                    option = online.configurationDetails[1];
-                }else{
-                    option = offline.configurationDetails[1];
-                }
+                //if(networkFlag){
+                //    option = online.configurationDetails[1];
+                //}else{
+                //    option = offline.configurationDetails[1];
+                //}
                 //var option = offline.configurationDetails[1];
-                console.log(option);
-                var manager=new MECManager(option);
+                //把远端事件配置信息同步到本地
+                online.getEvents(function(data){
+                    console.log(data);
+                    for(var key in data){
+                        console.log(key+": "+JSON.stringify(data[key]));
+                        localStorage.setItem(key,JSON.stringify(data[key]));
+                    }
+                },25);
+                //console.log(option);
+                //var manager=new MECManager(option);
                 console.log("Analytics initialized");
-                manager.collectEvent(option.eventType,'timestamp='+new Date().toISOString(),
-                    'http://10.108.167.72:9763/endpoints/HttpReciever_20160511');
-                alert("success");
+                //manager.collectEvent(option.eventType,'timestamp='+new Date().toISOString(),
+                //    'http://10.108.167.72:9763/endpoints/HttpReciever_20160511');
+                //alert("success");
             };
             this.after("initialize", function() {
                 this.loadPage();
